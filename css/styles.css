@@ -24,4 +24,22 @@
 }
 .page-header__logo {
   font-size: 1.5rem;
+}
+
+main {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.jumbo-slider__nav-link {
+  text-transform: uppercase;
+}
+.jumbo-slider__nav-link span {
+  text-transform: capitalize;
+}
+.jumbo-slider__nav-link:last-of-type {
+  text-transform: none;
 }/*# sourceMappingURL=styles.css.map */
