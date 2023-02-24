@@ -2,18 +2,26 @@
 :root {
   --white: #eee;
   --black: #000;
+  --dark: rgb(29, 29, 29);
+  --fluorescent: rgb(15, 235, 33);
   --heavy: 700;
   --large: 15rem;
   --import: "Chakra Petch", sans-serif;
 }
 
-body {
-  background-color: var(--black);
+.page-header {
+  background-color: var(--dark);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
-body h1 {
+.page-header a {
   color: var(--white);
-  font-family: var(--import);
-  font-size: var(--large);
-  font-weight: var(--heavy);
-  margin: 20px;
-} /*# sourceMappingURL=styles.css.map */
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.page-header__logo {
+  font-size: 1.5rem;
+}/*# sourceMappingURL=styles.css.map */

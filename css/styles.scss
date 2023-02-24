@@ -1,23 +1,31 @@
-  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;700&display=swap");
 
-  :root {
-      --bluberry : #eee;
-      --large    : 700;
-      --titleSize: 2rem;
-      --import   : 'Chakra Petch', sans-serif;
-  }
+:root {
+    --white      : #eee;
+    --black      : #000;
+    --dark       : rgb(29, 29, 29);
+    --fluorescent: rgb(15, 235, 33);
 
-  body {
-      background-color: rebeccapurple;
+    --heavy : 700;
+    --large : 15rem;
+    --import: "Chakra Petch", sans-serif;
+}
 
-      h1 {
-          color           : red;
-          background-color: black;
-          padding         : 50px;
-          color           : var(--bluberry);
-          font-weight     : var(--large);
-          font-size       : var(--titleSize);
-          font-family     : var(--import);
-          font-size       : 20rem;
-      }
-  }
+.page-header {
+    background-color: var(--dark);
+    width           : 100%;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+    padding         : 20px;
+
+    a {
+        color          : var(--white);
+        text-decoration: none;
+        text-transform : capitalize;
+    }
+
+    &__logo {
+        font-size: 1.5rem;
+    }
+}
