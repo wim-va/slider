@@ -9,10 +9,6 @@
   --import: "Chakra Petch", sans-serif;
 }
 
-body {
-  background-color: transparent;
-}
-
 .page-header {
   background-color: var(--dark);
   width: 100vw;
@@ -214,4 +210,7 @@ main .jumbo-slider__slide--active .jumbo-slider__nav-link {
 }
 main .jumbo-slider__slide--active .jumbo-slider__nav-link--active {
   color: var(--fluorescent);
+}
+main .jumbo-slider__nav {
+  display: none;
 }/*# sourceMappingURL=styles.css.map */
