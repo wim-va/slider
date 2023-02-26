@@ -4,20 +4,27 @@
     --white      : #eee;
     --black      : #000;
     --dark       : rgb(29, 29, 29);
-    --fluorescent: rgb(15, 235, 33);
+    --fluorescent: #03fc7f;
+    --heavy      : 700;
+    --large      : 15rem;
+    --import     : "Chakra Petch", sans-serif;
+}
 
-    --heavy : 700;
-    --large : 15rem;
-    --import: "Chakra Petch", sans-serif;
+body {
+    background-color: transparent;
 }
 
 .page-header {
     background-color: var(--dark);
-    width           : 100%;
+    width           : 100vw;
     display         : flex;
     justify-content : space-between;
     align-items     : center;
     padding         : 20px;
+    z-index         : 5;
+    position        : absolute;
+    position        : fixed;
+    z-index         : 10;
 
     a {
         color          : var(--white);
@@ -30,22 +37,242 @@
     }
 }
 
+// main {
+// z-index : 1;
+// position: relative;
+// width      : 100vw;
+// height     : 100vh;
+// top     : 0;
+// left    : 0;
+// width   : 100vw;
+// }
 main {
-    position: absolute;
-    width   : 100vw;
-    height  : 100vh;
-    top     : 0;
-    left    : 0;
-}
+    .jumbo-slider {
+        // width              : 100vw;
+        // height             : 100vh;
+        // position           : absolute;
+        // top                : 0;
+        // height             : 0;
+        // width           : 100%;
+        background-color: var(--dark);
 
-.jumbo-slider__nav-link {
-    text-transform: uppercase;
+        &__slide {
+            width           : 100vw;
+            height          : 100vh;
+            position        : relative;
+            background-color: var(--dark);
 
-    span {
-        text-transform: capitalize;
-    }
+            &__container {
+                position: absolute;
+                left    : 20%;
+                top     : 0;
+            }
 
-    &:last-of-type {
-        text-transform: none;
+            &-bg {
+                height             : 100vh;
+                width              : 100%;
+                background-position: center;
+                background-size    : cover;
+                opacity            : 0;
+                filter             : saturate(1);
+                transition         : opacity .1s ease-in-out;
+            }
+
+            &-info {
+                position        : absolute;
+                top             : 0;
+                left            : 0;
+                margin-left     : 15%;
+                height          : 100%;
+                height          : 100vh;
+                background-color: rgba(202, 194, 150, 0.548);
+                display         : flex;
+                justify-content : start;
+                align-items     : center;
+                justify-content : center;
+                align-items     : start;
+                flex-direction  : column;
+                padding         : 0 2%;
+                background-color: var(--dark);
+                color           : var(--dark);
+            }
+
+            &-number,
+            &-title {
+                font-family     : var(--import);
+                background-color: transparent;
+            }
+
+            &-number {
+                font-size  : 20rem;
+                font-weight: 700;
+                transform  : translateX(100px);
+                transition : transform .5s ease-in-out;
+            }
+
+            &-title {
+                width         : fit-content;
+                font-size     : 3rem;
+                text-transform: uppercase;
+                padding       : 5px;
+                margin-bottom : 2rem;
+                display       : inline-table;
+                transform     : translateX(100px);
+                transition    : transform .5s ease-in-out .3s;
+            }
+
+            &-description {
+                font-size : 1.2rem;
+                display   : flex;
+                width     : 100%;
+                transform : translateX(100px);
+                transition: transform .5s ease-in-out .3s;
+
+                .text-container {
+                    width    : 0;
+                    flex-grow: 1;
+                }
+            }
+
+            &-timer {
+                height          : 4px;
+                width           : 100vw;
+                width           : 0;
+                background-color: var(--fluorescent);
+                position        : absolute;
+                bottom          : 0;
+                left            : 0;
+                transition      : width 6s ease-in-out;
+            }
+
+
+            &--active {
+                .jumbo-slider {
+                    &__slide {
+                        &-bg {
+                            opacity: 1;
+                            filter : saturate(.1);
+                            width  : 100vw;
+                            height : 100vh;
+                        }
+
+                        &-info {
+                            background-color      : var(--dark);
+                            // background-color: rgba(202, 194, 150, 0.548);
+                            // background-color   : rgba(202, 194, 150, 0.18);
+                        }
+
+                        &-number {
+                            transform: translateX(0);
+                            color    : var(--fluorescent);
+                        }
+
+                        &-title {
+                            transform       : translateX(0);
+                            background-color: #000;
+                            color           : #eee;
+                        }
+
+                        &-description {
+                            transform: translateX(0);
+                        }
+
+                        &-timer {
+                            width: 100vw;
+                        }
+
+                        &-bg {
+                            opacity         : 1;
+                            filter          : saturate(1);
+                            background-color: var(--dark);
+                            background-color: transparent;
+                            transition      : opacity .2s ease-in-out, filter .5s ease-in-out;
+                            filter          : saturate(.1);
+                        }
+
+                        &-info {
+                            background-color: rgba(202, 194, 150, 0.18);
+                        }
+
+                        &-number {
+                            transform: translateX(0);
+                        }
+
+                        &-title {
+                            transform: translateX(0);
+                        }
+
+                        &-description {
+                            transform: translateX(0);
+                        }
+
+                        &-timer {
+                            width: 100vw;
+                        }
+
+                        // }
+                    }
+
+                    // }
+                    // counter links
+                    &__counter {
+                        position       : absolute;
+                        top            : 0;
+                        left           : 0;
+                        height         : 100vh;
+                        width          : 50px;
+                        display        : flex;
+                        flex-direction : column;
+                        justify-content: center;
+                        align-items    : center;
+
+                        &-circle {
+                            height          : 18px;
+                            width           : 18px;
+                            border          : 2px solid var(--fluorescent);
+                            background-color: transparent;
+                            border-radius   : 50%;
+                            margin          : 4px 0;
+
+                            &--active {
+                                background-color: var(--fluorescent);
+                            }
+                        }
+                    }
+
+                    // nav rechts
+                    &__nav {
+                        width          : 40px;
+                        height         : 100vh;
+                        position       : absolute;
+                        top            : 0;
+                        right          : 0;
+                        display        : flex;
+                        justify-content: center;
+                        align-items    : center;
+                        writing-mode   : sideways-rl;
+
+                        &-link {
+                            text-decoration   : none;
+                            text-transform    : uppercase;
+                            color             : var(--white);
+                            padding-top       : 10px;
+                            text-transform    : uppercase;
+                            text-transform    : capitalize;
+                            text-transform    : uppercase;
+                            text-transform    : uppercase;
+                            margin            : 20px 0;
+                            font-weight       : 400;
+                            // font-weight    : 600;
+                            font-size         : 1.2rem;
+
+                            &--active {
+                                color: var(--fluorescent);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
